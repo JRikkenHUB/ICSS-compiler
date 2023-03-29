@@ -47,7 +47,7 @@ ASSIGNMENT_OPERATOR: ':=';
 
 //--- PARSER: ---
 stylesheet: varName* cssRule* EOF;
-cssRule: selector OPEN_BRACE ruleBody CLOSE_BRACE;
+cssRule: picker OPEN_BRACE ruleBody CLOSE_BRACE;
 ruleDeclaration: propName COLON expression SEMICOLON;
 propName: LOWER_IDENT;
 
@@ -69,7 +69,7 @@ litExpression: boolVar | colorVar | percentageVar | pixelVar | scalarVar | varRe
 classPicker: CLASS_IDENT;
 tagPicker: LOWER_IDENT;
 idPicker: ID_IDENT | COLOR;
-selector: (tagPicker | classPicker | idPicker) (COMMA selector)*;
+picker: (tagPicker | classPicker | idPicker) (COMMA picker)*;
 
 ruleBody: (ruleDeclaration | ifStatement | varName)*;
 

@@ -187,15 +187,15 @@ public interface ICSSListener extends ParseTreeListener {
 	 */
 	void exitIdPicker(ICSSParser.IdPickerContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ICSSParser#selector}.
+	 * Enter a parse tree produced by {@link ICSSParser#picker}.
 	 * @param ctx the parse tree
 	 */
-	void enterSelector(ICSSParser.SelectorContext ctx);
+	void enterPicker(ICSSParser.PickerContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ICSSParser#selector}.
+	 * Exit a parse tree produced by {@link ICSSParser#picker}.
 	 * @param ctx the parse tree
 	 */
-	void exitSelector(ICSSParser.SelectorContext ctx);
+	void exitPicker(ICSSParser.PickerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ICSSParser#ruleBody}.
 	 * @param ctx the parse tree

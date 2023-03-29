@@ -25,14 +25,14 @@ public class ICSSParser extends Parser {
 		RULE_varName = 4, RULE_ifStatement = 5, RULE_elseStatement = 6, RULE_expression = 7, 
 		RULE_boolVar = 8, RULE_colorVar = 9, RULE_percentageVar = 10, RULE_pixelVar = 11, 
 		RULE_scalarVar = 12, RULE_varReference = 13, RULE_litExpression = 14, 
-		RULE_classPicker = 15, RULE_tagPicker = 16, RULE_idPicker = 17, RULE_selector = 18, 
+		RULE_classPicker = 15, RULE_tagPicker = 16, RULE_idPicker = 17, RULE_picker = 18, 
 		RULE_ruleBody = 19;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"stylesheet", "cssRule", "ruleDeclaration", "propName", "varName", "ifStatement", 
 			"elseStatement", "expression", "boolVar", "colorVar", "percentageVar", 
 			"pixelVar", "scalarVar", "varReference", "litExpression", "classPicker", 
-			"tagPicker", "idPicker", "selector", "ruleBody"
+			"tagPicker", "idPicker", "picker", "ruleBody"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -190,8 +190,8 @@ public class ICSSParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class CssRuleContext extends ParserRuleContext {
-		public SelectorContext selector() {
-			return getRuleContext(SelectorContext.class,0);
+		public PickerContext picker() {
+			return getRuleContext(PickerContext.class,0);
 		}
 		public TerminalNode OPEN_BRACE() { return getToken(ICSSParser.OPEN_BRACE, 0); }
 		public RuleBodyContext ruleBody() {
@@ -224,7 +224,7 @@ public class ICSSParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(54);
-			selector();
+			picker();
 			setState(55);
 			match(OPEN_BRACE);
 			setState(56);
@@ -1199,7 +1199,7 @@ public class ICSSParser extends Parser {
 	}
 
 	@SuppressWarnings("CheckReturnValue")
-	public static class SelectorContext extends ParserRuleContext {
+	public static class PickerContext extends ParserRuleContext {
 		public TagPickerContext tagPicker() {
 			return getRuleContext(TagPickerContext.class,0);
 		}
@@ -1213,34 +1213,34 @@ public class ICSSParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(ICSSParser.COMMA, i);
 		}
-		public List<SelectorContext> selector() {
-			return getRuleContexts(SelectorContext.class);
+		public List<PickerContext> picker() {
+			return getRuleContexts(PickerContext.class);
 		}
-		public SelectorContext selector(int i) {
-			return getRuleContext(SelectorContext.class,i);
+		public PickerContext picker(int i) {
+			return getRuleContext(PickerContext.class,i);
 		}
-		public SelectorContext(ParserRuleContext parent, int invokingState) {
+		public PickerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_selector; }
+		@Override public int getRuleIndex() { return RULE_picker; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ICSSListener ) ((ICSSListener)listener).enterSelector(this);
+			if ( listener instanceof ICSSListener ) ((ICSSListener)listener).enterPicker(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ICSSListener ) ((ICSSListener)listener).exitSelector(this);
+			if ( listener instanceof ICSSListener ) ((ICSSListener)listener).exitPicker(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ICSSVisitor ) return ((ICSSVisitor<? extends T>)visitor).visitSelector(this);
+			if ( visitor instanceof ICSSVisitor ) return ((ICSSVisitor<? extends T>)visitor).visitPicker(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final SelectorContext selector() throws RecognitionException {
-		SelectorContext _localctx = new SelectorContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_selector);
+	public final PickerContext picker() throws RecognitionException {
+		PickerContext _localctx = new PickerContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_picker);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
@@ -1280,7 +1280,7 @@ public class ICSSParser extends Parser {
 					setState(138);
 					match(COMMA);
 					setState(139);
-					selector();
+					picker();
 					}
 					} 
 				}

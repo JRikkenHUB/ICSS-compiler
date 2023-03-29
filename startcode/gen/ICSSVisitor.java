@@ -118,11 +118,11 @@ public interface ICSSVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIdPicker(ICSSParser.IdPickerContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ICSSParser#selector}.
+	 * Visit a parse tree produced by {@link ICSSParser#picker}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSelector(ICSSParser.SelectorContext ctx);
+	T visitPicker(ICSSParser.PickerContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ICSSParser#ruleBody}.
 	 * @param ctx the parse tree

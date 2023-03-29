@@ -232,13 +232,13 @@ public class ICSSBaseListener implements ICSSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSelector(ICSSParser.SelectorContext ctx) { }
+	@Override public void enterPicker(ICSSParser.PickerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSelector(ICSSParser.SelectorContext ctx) { }
+	@Override public void exitPicker(ICSSParser.PickerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
