@@ -35,6 +35,7 @@ WS: [ \t\r\n]+ -> skip;
 OPEN_BRACE: '{';
 CLOSE_BRACE: '}';
 SEMICOLON: ';';
+COMMA : ',';
 COLON: ':';
 PLUS: '+';
 MIN: '-';
@@ -55,7 +56,7 @@ varName: varReference ASSIGNMENT_OPERATOR expression+ SEMICOLON;
 ifStatement: IF BOX_BRACKET_OPEN (varReference | boolVar) BOX_BRACKET_CLOSE OPEN_BRACE ruleBody CLOSE_BRACE elseStatement?;
 elseStatement: ELSE OPEN_BRACE ruleBody CLOSE_BRACE;
 
-expression: litExpression | expression (MUL | DIV) expression | expression (PLUS | MIN) expression;
+expression: litExpression | expression (MUL) expression | expression (PLUS | MIN) expression;
 
 boolVar: TRUE | FALSE;
 colorVar: COLOR;
